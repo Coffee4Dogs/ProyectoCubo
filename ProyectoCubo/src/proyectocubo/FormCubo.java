@@ -56,7 +56,10 @@ public class FormCubo extends javax.swing.JFrame {
     void Agregar_Registro(String x) {
 
         // Agrega Registros
+        Mov[reg] = x;
         reg = reg + 1;
+        
+        
         label_reg.setText(String.valueOf(reg));
 
         if (reg >= 1) {
@@ -70,7 +73,7 @@ public class FormCubo extends javax.swing.JFrame {
         else {
             label_Mov1.setText("Error");
         }
-        Mov[reg] = x;
+        
         label_Mov.setText(":-$ Ultimo Movimiento: " + x);
 
         // Tabla
@@ -90,25 +93,28 @@ public class FormCubo extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) Tabla_Mov.getModel();
         // Set Rows 1
         model.setRowCount(1);
+        //Labels
+        label_Mov.setText("Cubo Armado");
+        label_reg.setText("Sin Registros");
 
         // Boton Solucion
         reg = Ultimo_Registro;
         reg = 0; // Reiniciar registros a 0.
 
         // Movimientos A
-        if (Mov[Ultimo_Registro] == "A1")
+        if (Mov[reg].equals("A1"));
             B1();
-        else if (Mov[Ultimo_Registro] == "A2")
+        if (Mov[reg].equals("A2"));
             B2();
-        else if (Mov[Ultimo_Registro] == "A3")
+        if (Mov[reg].equals("A3"));
             B3();
 
         // Movimientos B
-        if (Mov[Ultimo_Registro] == "B1")
+        if (Mov[reg].equals("B1"));
             A1();
-        else if (Mov[Ultimo_Registro] == "B2")
+        if (Mov[reg].equals("B2"));
             A2();
-        else if (Mov[Ultimo_Registro] == "B3")
+        if (Mov[reg].equals("B3"));
             A3();
     }
 
@@ -1671,7 +1677,7 @@ public class FormCubo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // Code">                          
     private void initComponents() {
 
         jPanel5 = new javax.swing.JPanel();
@@ -3412,7 +3418,7 @@ public class FormCubo extends javax.swing.JFrame {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     private void Btn_I3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Btn_I3ActionPerformed
         // TODO add your handling code here:
@@ -3794,7 +3800,7 @@ public class FormCubo extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton Btn_A1;
     private javax.swing.JButton Btn_A2;
     private javax.swing.JButton Btn_A3;
@@ -3878,5 +3884,5 @@ public class FormCubo extends javax.swing.JFrame {
     private javax.swing.JLabel label_Mov;
     private javax.swing.JLabel label_Mov1;
     private javax.swing.JLabel label_reg;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
