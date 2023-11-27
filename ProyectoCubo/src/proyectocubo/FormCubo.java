@@ -1,5 +1,7 @@
-// Version/ProyectoCubo_10.0
-// Updates: Registro (Tabla)
+// Version/ProyectoCubo_10.1
+// Updated: Registro (Table) : (Completed all reg variable)
+// Updated: I1, I2, I3.
+
 package proyectocubo;
 
 import static proyectocubo.ProyectoCubo.C6;
