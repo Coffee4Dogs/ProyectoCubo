@@ -98,11 +98,11 @@ public class ProyectoCubo {
         // FUNCION ROTAR CARA 6 A LA DERECHA.
         // Rotando las esquinas
         int t;
-        t = C2[1][3];
-        C2[1][3] = C2[1][1];
-        C2[1][1] = C2[3][1];
-        C2[3][1] = C2[3][3];
-        C2[3][3] = t;
+        // t = C2[1][3];
+        // C2[1][3] = C2[1][1];
+        // C2[1][1] = C2[3][1];
+        // C2[3][1] = C2[3][3];
+        // C2[3][3] = t;
 
         // Rotando las de en medio
         t = C2[1][2];
@@ -289,218 +289,134 @@ public class ProyectoCubo {
 
     // ==--==--==--==-- Movimientos Arriba A --==--==--==--==--
     public static void A1() {
-        // Rotar Hacia Arriba
-        int t;
-        t = C1[1][1];
-        C1[1][1] = C2[1][1];
-        C2[1][1] = C3[1][1];
-        C3[1][1] = C4[1][1];
-        C4[1][1] = t;
-
-        t = C1[2][1];
-        C1[2][1] = C2[2][1];
-        C2[2][1] = C3[2][1];
-        C3[2][1] = C4[2][1];
-        C4[2][1] = t;
-
-        t = C1[3][1];
-        C1[3][1] = C2[3][1];
-        C2[3][1] = C3[3][1];
-        C3[3][1] = C4[3][1];
-        C4[3][1] = t;
+        // Move
+        for (int i = 1; i <= 3; i++) {
+            int t = C1[i][1];
+            C1[i][1] = C2[i][1];
+            C2[i][1] = C3[i][1];
+            C3[i][1] = C4[i][1];
+            C4[i][1] = t;
+        }
+        RIC5();
     }// Fin del Movimiento A1
 
     public static void A2() {
-        // Rotar Hacia Arriba
-        int t;
-        t = C1[1][2];
-        C1[1][2] = C2[1][2];
-        C2[1][2] = C3[1][2];
-        C3[1][2] = C4[1][2];
-        C4[1][2] = t;
+        // Move
+        for (int i = 1; i <= 3; i++) {
+            int t = C1[i][2];
+            C1[i][2] = C2[i][2];
+            C2[i][2] = C3[i][2];
+            C3[i][2] = C4[i][2];
+            C4[i][2] = t;
+        }
 
-        t = C1[2][2];
-        C1[2][2] = C2[2][3];
-        C2[2][2] = C3[2][3];
-        C3[2][2] = C4[2][3];
-        C4[2][2] = t;
-
-        t = C1[3][2];
-        C1[3][2] = C2[3][2];
-        C2[3][2] = C3[3][2];
-        C3[3][2] = C4[3][2];
-        C4[3][2] = t;
     }// Fin del Movimiento A2
 
     public static void A3() {
-        // Rotar Hacia Arriba
-        int t;
-        t = C1[1][3];
-        C1[1][3] = C2[1][3];
-        C2[1][3] = C3[1][3];
-        C3[1][3] = C4[1][3];
-        C4[1][3] = t;
+        // Move
+        for (int i = 1; i <= 3; i++) {
+            int t = C1[i][3];
+            C1[i][3] = C2[i][3];
+            C2[i][3] = C3[i][3];
+            C3[i][3] = C4[i][3];
+            C4[i][3] = t;
 
-        t = C1[2][3];
-        C1[2][3] = C2[2][3];
-        C2[2][3] = C3[2][3];
-        C3[2][3] = C4[2][3];
-        C4[2][3] = t;
-
-        t = C1[3][3];
-        C1[3][3] = C2[3][3];
-        C2[3][3] = C3[3][3];
-        C3[3][3] = C4[3][3];
-        C4[3][3] = t;
+        }
+        RDC6();
 
     }// Fin del Movimiento A3
 
     // ==--==--==--==-- Movimientos Abajo B --==--==--==--==--
     public static void B1() {
-        // Rotar Hacia Abajo
-        int t;
-        t = C3[1][1];
-        C3[1][1] = C2[1][1];
-        C2[1][1] = C1[1][1];
-        C1[1][1] = C4[1][1];
-        C4[1][1] = t;
+        // Move
+        for (int i = 0; i <= 3; i++) {
+            int t = C3[i][1];
+            C3[i][1] = C2[i][1];
+            C2[i][1] = C1[i][1];
+            C1[i][1] = C4[i][1];
+            C4[i][1] = t;
+        }
 
-        t = C3[2][1];
-        C3[2][1] = C2[2][1];
-        C2[2][1] = C1[2][1];
-        C1[2][1] = C4[2][1];
-        C4[2][1] = t;
+        RDC5();
 
-        t = C3[3][1];
-        C3[3][1] = C2[3][1];
-        C2[3][1] = C1[3][1];
-        C1[3][1] = C4[3][1];
-        C4[3][1] = t;
     }// Fin del Movimiento B1
 
     public static void B2() {
-        // Rotar Hacia Abajo
-        int t;
-        t = C3[1][2];
-        C3[1][2] = C2[1][2];
-        C2[1][2] = C1[1][2];
-        C1[1][2] = C4[1][2];
-        C4[1][2] = t;
+        // Move
+        for (int i = 0; i <= 3; i++) {
+            int t = C3[i][2];
+            C3[i][2] = C2[i][2];
+            C2[i][2] = C1[i][2];
+            C1[i][2] = C4[i][2];
+            C4[i][2] = t;
+        }
 
-        t = C3[2][2];
-        C3[2][2] = C2[2][2];
-        C2[2][2] = C1[2][2];
-        C1[2][2] = C4[2][2];
-        C4[2][2] = t;
-
-        t = C3[3][2];
-        C3[3][2] = C2[3][2];
-        C2[3][2] = C1[3][2];
-        C1[3][2] = C4[3][2];
-        C4[3][2] = t;
     }// Fin del Movimiento B2
 
     public static void B3() {
-        // Rotar Hacia Abajo
+
+        // Move
         int t;
-        t = C3[1][3];
-        C3[1][3] = C2[1][3];
-        C2[1][3] = C1[1][3];
-        C1[1][3] = C4[1][3];
-        C4[1][3] = t;
+        for (int i = 0; i <= 3; i++) {
+            t = C3[i][3];
+            C3[i][3] = C2[i][3];
+            C2[i][3] = C1[i][3];
+            C1[i][3] = C4[i][3];
+            C4[i][3] = t;
+        }
+        RIC6();
 
-        t = C3[2][3];
-        C3[2][3] = C2[2][3];
-        C2[2][3] = C1[2][3];
-        C1[2][3] = C4[2][3];
-        C4[2][3] = t;
-
-        t = C3[3][3];
-        C3[3][3] = C2[3][3];
-        C2[3][3] = C1[3][3];
-        C1[3][3] = C4[3][3];
-        C4[3][3] = t;
     }// Fin del Movimiento B3
 
     // ==--==--==--==-- Movimientos Derecha D --==--==--==--==--
     public static void D1() {
-        // Rotar Hacia La Derecha
+        // Move
         int t;
-
-        t = C6[1][1];
-        C6[1][1] = C2[1][1];
-        C2[1][1] = C5[1][1];
-        C5[1][1] = C4[1][1];
-        C4[1][1] = t;
-
-        t = C6[1][2];
-        C6[1][2] = C2[1][2];
-        C2[1][2] = C5[1][2];
-        C5[1][2] = C4[1][2];
-        C4[1][2] = t;
-
-        t = C6[1][3];
-        C6[1][3] = C2[1][3];
-        C2[1][3] = C5[1][3];
-        C5[1][3] = C4[1][3];
-        C4[1][3] = t;
+        for (int i = 1; i <= 3; i++) {
+            t = C6[1][i];
+            C6[1][i] = C2[1][i];
+            C2[1][i] = C5[1][i];
+            C5[1][i] = C4[1][i];
+            C4[1][i] = t;
+        }
+        RIC1();
 
     }// Fin del Movimiento D1
 
     public static void D2() {
-        // Rotar Hacia La Derecha
+        // Move
         int t;
-
-        t = C6[2][1];
-        C6[2][1] = C2[2][1];
-        C2[2][1] = C5[2][1];
-        C5[2][1] = C4[2][1];
-        C4[2][1] = t;
-
-        t = C6[2][2];
-        C6[2][2] = C2[2][2];
-        C2[2][2] = C5[2][2];
-        C5[2][2] = C4[2][2];
-        C4[2][2] = t;
-
-        t = C6[2][3];
-        C6[2][3] = C2[2][3];
-        C2[2][3] = C5[2][3];
-        C5[2][3] = C4[2][3];
-        C4[2][3] = t;
+        for (int i = 1; i <= 3; i++) {
+            t = C6[2][i];
+            C6[2][i] = C2[2][i];
+            C2[2][i] = C5[2][i];
+            C5[2][i] = C4[2][i];
+            C4[2][i] = t;
+        }
 
     }// Fin del Movimiento D2
 
     public static void D3() {
-        // Rotar Hacia La Derecha
+
+        // Move
         int t;
+        for (int i = 1; i <= 3; i++) {
+            t = C6[3][i];
+            C6[3][i] = C2[3][i];
+            C2[3][i] = C5[3][i];
+            C5[3][i] = C4[3][i];
+            C4[3][i] = t;
+        }
 
-        t = C6[3][1];
-        C6[3][1] = C2[3][1];
-        C2[3][1] = C5[3][1];
-        C5[3][1] = C4[3][1];
-        C4[3][1] = t;
-
-        t = C6[3][2];
-        C6[3][2] = C2[3][2];
-        C2[3][2] = C5[3][2];
-        C5[3][2] = C4[3][2];
-        C4[3][2] = t;
-
-        t = C6[3][3];
-        C6[3][3] = C2[3][3];
-        C2[3][3] = C5[3][3];
-        C5[3][3] = C4[3][3];
-        C4[3][3] = t;
+        RDC3();
 
     }// Fin del Movimiento D3
 
     // ==--==--==--==-- Movimientos Izquierda I --==--==--==--==--
-    public static void I1() {
+    public static void I1() { // Optimizar con un for
         // Rotar hacia la Izquierda
-        int t;
-
-        t = C5[1][1];
+        // Move
+        int t = C5[1][1];
         C5[1][1] = C2[1][1];
         C2[1][1] = C6[1][1];
         C6[1][1] = C4[1][1];
@@ -518,13 +434,13 @@ public class ProyectoCubo {
         C6[1][3] = C4[1][3];
         C4[1][3] = t;
 
+        RDC1();
+
     }// Fin del Movimiento I3
 
     public static void I2() {
-        // Rotar hacia la Izquierda
-        int t;
-
-        t = C5[2][1];
+        // Move
+        int t = C5[2][1];
         C5[2][1] = C2[2][1];
         C2[2][1] = C6[2][1];
         C6[2][1] = C4[2][1];
@@ -545,10 +461,9 @@ public class ProyectoCubo {
     }// Fin del Movimiento I2
 
     public static void I3() {
-        // Rotar hacia la Izquierda
-        int t;
 
-        t = C5[3][1];
+        // Move
+        int t = C5[3][1];
         C5[3][1] = C2[3][1];
         C2[3][1] = C6[3][1];
         C6[3][1] = C4[3][1];
@@ -566,10 +481,115 @@ public class ProyectoCubo {
         C6[3][3] = C4[3][3];
         C4[3][3] = t;
 
+        RIC3();
+
     }// Fin del Movimiento I3
 
+    // ---Movimientos RD ---
+    public static void RD1() {
+        // Move
+        for (int i = 1; i <= 3; i++) {
+            int t = C1[3][i];
+            C1[3][i] = C6[3][i];
+            C6[3][i] = C3[3][i];
+            C3[3][i] = C5[3][i];
+            C5[3][i] = t;
+        }
+
+        RIC2();
+
+    }// Fin del Movimiento RD1
+
+    public static void RD2() {
+
+        // Move
+        for (int i = 1; i <= 3; i++) {
+            int t = C1[2][i];
+            C1[2][i] = C6[2][i];
+            C6[2][i] = C3[2][i];
+            C3[2][i] = C5[2][i];
+            C5[2][i] = t;
+        }
+
+    }// Fin del Movimiento RD2
+
+    public static void RD3() {
+
+        // Move
+        for (int i = 1; i <= 3; i++) {
+            int t = C1[1][i];
+            C1[1][i] = C6[1][i];
+            C6[1][i] = C3[1][i];
+            C3[1][i] = C5[1][i];
+            C5[1][i] = t;
+        }
+
+        RDC4();
+    }// Fin del Movimiento RD3
+
+    // ---Movimientos RI ---
+
+    public static void RI1() {
+
+        // Move
+        for (int i = 1; i <= 3; i++) {
+            int t = C1[3][i];
+            C1[3][i] = C5[3][i];
+            C5[3][i] = C3[3][i];
+            C3[3][i] = C6[3][i];
+            C6[3][i] = t;
+        }
+
+        RIC2();
+
+    }// Fin del Movimiento RI1
+
+    public static void RI2() {
+
+        // Move
+        for (int i = 1; i <= 3; i++) {
+            int t = C1[2][i];
+            C1[2][i] = C5[2][i];
+            C5[2][i] = C3[2][i];
+            C3[2][i] = C6[2][i];
+            C6[2][i] = t;
+        }
+
+    }// Fin del Movimiento RI2
+
+    public static void RI3() {
+
+        // Move
+        for (int i = 1; i <= 3; i++) {
+            int t = C1[1][i];
+            C1[1][i] = C5[1][i];
+            C5[1][i] = C3[1][i];
+            C3[1][i] = C6[1][i];
+            C6[1][i] = t;
+        }
+
+        RIC4();
+
+    }// Fin del Movimiento RI3
+
     public static void main(String[] args) {
-        System.out.println("Hello friend");
+
+        ImprimeCubo();
+        RD1();
+        RD2();
+        RD3();
+        ImprimeCubo();
+        RD1();
+        RD2();
+        RD3();
+        ImprimeCubo();
+        RD1();
+        RD2();
+        RD3();
+        ImprimeCubo();
+        RD1();
+        RD2();
+        RD3();
         ImprimeCubo();
 
     }// Fin del metodo Main
