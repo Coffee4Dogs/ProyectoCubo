@@ -1,6 +1,9 @@
-// Version/ProyectoCubo_10.1
-// Updated: Registro (Table) : (Completed all reg variable).
-// Updated: I1, I2, I3.
+// Version/ProyectoCubo_10.2
+// Updates: Registro (Tabla)
+///Arreglar RDC4
+//Arreglar D1
+//Rotacion Derecha Caras arreglado.
+//Rotacion Izquierda Caras Pendiente.
 
 package proyectocubo;
 
@@ -562,13 +565,15 @@ public class FormCubo extends javax.swing.JFrame {
 
     // --- Rotaciones Derecha ---
     public void RDC1() {
+
         // Move
         // Rotando las esquinas
-        int t = C1[1][3];
-        C1[1][3] = C1[1][1];
+        int t;
+        t = C1[1][1];
         C1[1][1] = C1[3][1];
         C1[3][1] = C1[3][3];
-        C1[3][3] = t;
+        C1[3][3] = C1[1][3];
+        C1[1][3] = t;
 
         // Rotando las de en medio
         t = C1[1][2];
@@ -578,19 +583,20 @@ public class FormCubo extends javax.swing.JFrame {
         C1[2][3] = t;
 
         // Color
-        // Rotando las esquinas
-        Color t2 = COL1[1][3];
-        COL1[1][3] = COL1[1][1];
-        COL1[1][1] = COL1[3][1];
-        COL1[3][1] = COL1[3][3];
-        COL1[3][3] = t2;
+        // Rotando las Esquinas
+        Color t2;
+        t2 = COL1[1][1];
+        COL1[1][1] = COL1[1][3];
+        COL1[1][3] = COL1[3][3];
+        COL1[3][3] = COL1[3][1];
+        COL1[3][1] = t2;
 
         // Rotando las de en medio
         t2 = COL1[1][2];
-        COL1[1][2] = COL1[2][1];
+        COL1[1][2] = COL1[2][3];
         COL1[2][1] = COL1[3][2];
-        COL1[3][2] = COL1[2][3];
-        COL1[2][3] = t2;
+        COL1[3][2] = COL1[2][1];
+        COL1[2][1] = t2;
 
         // Update
         if (cc == 1)
@@ -605,17 +611,17 @@ public class FormCubo extends javax.swing.JFrame {
         // Rotando las esquinas
         int t;
         t = C2[1][1];
-        C2[1][1] = C2[1][3];
-        C2[1][3] = C2[3][3];
-        C2[3][3] = C2[3][1];
-        C2[3][1] = t;
+        C2[1][1] = C2[3][1];
+        C2[3][1] = C2[3][3];
+        C2[3][3] = C2[1][3];
+        C2[1][3] = t;
 
         // Rotando las de en medio
         t = C2[1][2];
-        C2[1][2] = C2[2][3];
+        C2[1][2] = C2[2][1];
         C2[2][1] = C2[3][2];
-        C2[3][2] = C2[2][1];
-        C2[2][1] = t;
+        C2[3][2] = C2[2][3];
+        C2[2][3] = t;
 
         // Color
         // Rotando las Esquinas
@@ -644,11 +650,12 @@ public class FormCubo extends javax.swing.JFrame {
     public void RDC3() {
         // Move
         // Rotando las esquinas
-        int t = C3[1][3];
-        C3[1][3] = C3[1][1];
+        int t;
+        t = C3[1][1];
         C3[1][1] = C3[3][1];
         C3[3][1] = C3[3][3];
-        C3[3][3] = t;
+        C3[3][3] = C3[1][3];
+        C3[1][3] = t;
 
         // Rotando las de en medio
         t = C3[1][2];
@@ -658,19 +665,20 @@ public class FormCubo extends javax.swing.JFrame {
         C3[2][3] = t;
 
         // Color
-        // Rotando las esquinas
-        Color t2 = COL3[1][3];
-        COL3[1][3] = COL3[1][1];
-        COL3[1][1] = COL3[3][1];
-        COL3[3][1] = COL3[3][3];
-        COL3[3][3] = t2;
+        // Rotando las Esquinas
+        Color t2;
+        t2 = COL3[1][1];
+        COL3[1][1] = COL3[1][3];
+        COL3[1][3] = COL3[3][3];
+        COL3[3][3] = COL3[3][1];
+        COL3[3][1] = t2;
 
         // Rotando las de en medio
         t2 = COL3[1][2];
-        COL3[1][2] = COL3[2][1];
+        COL3[1][2] = COL3[2][3];
         COL3[2][1] = COL3[3][2];
-        COL3[3][2] = COL3[2][3];
-        COL3[2][3] = t2;
+        COL3[3][2] = COL3[2][1];
+        COL3[2][1] = t2;
 
         // Update
         if (cc == 1)
@@ -681,15 +689,17 @@ public class FormCubo extends javax.swing.JFrame {
     }// Fin del Movimiento RDC3
 
     public void RDC4() {
+
         // Move
-        // Rotando las esquinas
-        int t = C4[1][3];
+        // Rotar esquinas
+        int t;
+        t = C4[1][3];
         C4[1][3] = C4[1][1];
         C4[1][1] = C4[3][1];
         C4[3][1] = C4[3][3];
         C4[3][3] = t;
 
-        // Rotando las de en medio
+        // Rotar las de emedio
         t = C4[1][2];
         C4[1][2] = C4[2][1];
         C4[2][1] = C4[3][2];
@@ -697,14 +707,15 @@ public class FormCubo extends javax.swing.JFrame {
         C4[2][3] = t;
 
         // Color
-        // Rotando las esquinas
-        Color t2 = COL4[1][3];
+        // Rotar esquinas
+        Color t2;
+        t2 = COL4[1][3];
         COL4[1][3] = COL4[1][1];
         COL4[1][1] = COL4[3][1];
         COL4[3][1] = COL4[3][3];
         COL4[3][3] = t2;
 
-        // Rotando las de en medio
+        // Rotar las de emedio
         t2 = COL4[1][2];
         COL4[1][2] = COL4[2][1];
         COL4[2][1] = COL4[3][2];
@@ -720,14 +731,15 @@ public class FormCubo extends javax.swing.JFrame {
 
     public void RDC5() {
         // Move
-        // Rotando las esquinas
-        int t = C5[1][3];
+        // Rotar esquinas
+        int t;
+        t = C5[1][3];
         C5[1][3] = C5[1][1];
         C5[1][1] = C5[3][1];
         C5[3][1] = C5[3][3];
         C5[3][3] = t;
 
-        // Rotando las de en medio
+        // Rotar las de emedio
         t = C5[1][2];
         C5[1][2] = C5[2][1];
         C5[2][1] = C5[3][2];
@@ -735,14 +747,15 @@ public class FormCubo extends javax.swing.JFrame {
         C5[2][3] = t;
 
         // Color
-        // Rotando las esquinas
-        Color t2 = COL5[1][3];
+        // Rotar esquinas
+        Color t2;
+        t2 = COL5[1][3];
         COL5[1][3] = COL5[1][1];
         COL5[1][1] = COL5[3][1];
         COL5[3][1] = COL5[3][3];
         COL5[3][3] = t2;
 
-        // Rotando las de en medio
+        // Rotar las de emedio
         t2 = COL5[1][2];
         COL5[1][2] = COL5[2][1];
         COL5[2][1] = COL5[3][2];
@@ -754,18 +767,19 @@ public class FormCubo extends javax.swing.JFrame {
             EtiquetasOn();
         if (ccol == 1)
             ColoresOn();
-
     }// Fin del Movimiento RDC5
 
     public void RDC6() {
         // Move
-        int t = C6[1][3];
+        // Rotar esquinas
+        int t;
+        t = C6[1][3];
         C6[1][3] = C6[1][1];
         C6[1][1] = C6[3][1];
         C6[3][1] = C6[3][3];
         C6[3][3] = t;
 
-        // Rotando las de en medio
+        // Rotar las de emedio
         t = C6[1][2];
         C6[1][2] = C6[2][1];
         C6[2][1] = C6[3][2];
@@ -773,13 +787,15 @@ public class FormCubo extends javax.swing.JFrame {
         C6[2][3] = t;
 
         // Color
-        Color t2 = COL6[1][3];
+        // Rotar esquinas
+        Color t2;
+        t2 = COL6[1][3];
         COL6[1][3] = COL6[1][1];
         COL6[1][1] = COL6[3][1];
         COL6[3][1] = COL6[3][3];
         COL6[3][3] = t2;
 
-        // Rotando las de en medio
+        // Rotar las de emedio
         t2 = COL6[1][2];
         COL6[1][2] = COL6[2][1];
         COL6[2][1] = COL6[3][2];
@@ -791,12 +807,15 @@ public class FormCubo extends javax.swing.JFrame {
             EtiquetasOn();
         if (ccol == 1)
             ColoresOn();
+
     }// Fin del Movimiento RDC6
 
     // --- Rotaciones Izquierda ---
     public void RIC1() {
         // Move
-        int t = C1[1][1];
+        // Rotar las Esquinas
+        int t;
+        t = C1[1][1];
         C1[1][1] = C1[1][3];
         C1[1][3] = C1[3][3];
         C1[3][3] = C1[3][1];
@@ -809,7 +828,9 @@ public class FormCubo extends javax.swing.JFrame {
         C1[2][1] = t;
 
         // Color
-        Color t2 = COL1[1][1];
+        // Rotar las esquinas
+        Color t2;
+        t2 = COL1[1][1];
         COL1[1][1] = COL1[1][3];
         COL1[1][3] = COL1[3][3];
         COL1[3][3] = COL1[3][1];
@@ -826,11 +847,15 @@ public class FormCubo extends javax.swing.JFrame {
             EtiquetasOn();
         if (ccol == 1)
             ColoresOn();
+
     }
 
     public void RIC2() {
+
         // Move
-        int t = C2[1][1];
+        // Rotar las Esquinas
+        int t;
+        t = C2[1][1];
         C2[1][1] = C2[1][3];
         C2[1][3] = C2[3][3];
         C2[3][3] = C2[3][1];
@@ -843,11 +868,13 @@ public class FormCubo extends javax.swing.JFrame {
         C2[2][1] = t;
 
         // Color
-        Color t2 = COL2[1][1];
+        Color t2;
+        t2 = COL2[1][1];
         COL2[1][1] = COL2[1][3];
         COL2[1][3] = COL2[3][3];
         COL2[3][3] = COL2[3][1];
         COL2[3][1] = t2;
+
         // Rotar las de en medio
         t2 = COL2[1][2];
         COL2[1][2] = COL2[2][3];
@@ -860,12 +887,14 @@ public class FormCubo extends javax.swing.JFrame {
             EtiquetasOn();
         if (ccol == 1)
             ColoresOn();
+
     }
 
     public void RIC3() {
         // Move
-        // Mover Esquinas
-        int t = C3[1][1];
+        // Rotar las Esquinas
+        int t;
+        t = C3[1][1];
         C3[1][1] = C3[1][3];
         C3[1][3] = C3[3][3];
         C3[3][3] = C3[3][1];
@@ -878,8 +907,9 @@ public class FormCubo extends javax.swing.JFrame {
         C3[2][1] = t;
 
         // Color
-        // Rotando las esquinas
-        Color t2 = COL3[1][1];
+        // Rotar las Esquinas
+        Color t2;
+        t2 = COL3[1][1];
         COL3[1][1] = COL3[1][3];
         COL3[1][3] = COL3[3][3];
         COL3[3][3] = COL3[3][1];
@@ -900,7 +930,9 @@ public class FormCubo extends javax.swing.JFrame {
 
     public void RIC4() {
         // Move
-        int t = C4[1][1];
+        // Rotar las Esquinas
+        int t;
+        t = C4[1][1];
         C4[1][1] = C4[1][3];
         C4[1][3] = C4[3][3];
         C4[3][3] = C4[3][1];
@@ -913,7 +945,9 @@ public class FormCubo extends javax.swing.JFrame {
         C4[2][1] = t;
 
         // Color
-        Color t2 = COL4[1][1];
+        // Rotar las Esquinas
+        Color t2;
+        t2 = COL4[1][1];
         COL4[1][1] = COL4[1][3];
         COL4[1][3] = COL4[3][3];
         COL4[3][3] = COL4[3][1];
@@ -924,6 +958,7 @@ public class FormCubo extends javax.swing.JFrame {
         COL4[2][3] = COL4[3][2];
         COL4[3][2] = COL4[2][1];
         COL4[2][1] = t2;
+
         // Update
         if (cc == 1)
             EtiquetasOn();
@@ -933,8 +968,9 @@ public class FormCubo extends javax.swing.JFrame {
 
     public void RIC5() {
         // Move
-        // Mover Esquinas
-        int t = C5[1][1];
+        // Rotar las Esquinas
+        int t;
+        t = C5[1][1];
         C5[1][1] = C5[1][3];
         C5[1][3] = C5[3][3];
         C5[3][3] = C5[3][1];
@@ -947,8 +983,9 @@ public class FormCubo extends javax.swing.JFrame {
         C5[2][1] = t;
 
         // Color
-        // Rotando las esquinas
-        Color t2 = COL5[1][1];
+        // Rotar las Esquinas
+        Color t2;
+        t2 = COL5[1][1];
         COL5[1][1] = COL5[1][3];
         COL5[1][3] = COL5[3][3];
         COL5[3][3] = COL5[3][1];
@@ -959,16 +996,20 @@ public class FormCubo extends javax.swing.JFrame {
         COL5[2][3] = COL5[3][2];
         COL5[3][2] = COL5[2][1];
         COL5[2][1] = t2;
+
         // Update
         if (cc == 1)
             EtiquetasOn();
         if (ccol == 1)
             ColoresOn();
+
     }
 
     public void RIC6() {
         // Move
-        int t = C6[1][1];
+        // Rotar las Esquinas
+        int t;
+        t = C6[1][1];
         C6[1][1] = C6[1][3];
         C6[1][3] = C6[3][3];
         C6[3][3] = C6[3][1];
@@ -981,8 +1022,9 @@ public class FormCubo extends javax.swing.JFrame {
         C6[2][1] = t;
 
         // Color
-        // Rotando las esquinas
-        Color t2 = COL6[1][1];
+        // Rotar las Esquinas
+        Color t2;
+        t2 = COL6[1][1];
         COL6[1][1] = COL6[1][3];
         COL6[1][3] = COL6[3][3];
         COL6[3][3] = COL6[3][1];
@@ -999,14 +1041,16 @@ public class FormCubo extends javax.swing.JFrame {
             EtiquetasOn();
         if (ccol == 1)
             ColoresOn();
+
     }
 
     // --- Movimientos A (Arriba) ---
     public void A1() {
 
         // Move
+        int t;
         for (int i = 1; i <= 3; i++) {
-            int t = C1[i][1];
+            t = C1[i][1];
             C1[i][1] = C2[i][1];
             C2[i][1] = C3[i][1];
             C3[i][1] = C4[i][1];
@@ -1014,8 +1058,9 @@ public class FormCubo extends javax.swing.JFrame {
         }
 
         // Color
+        Color t2;
         for (int i = 1; i <= 3; i++) {
-            Color t2 = COL1[i][1];
+            t2 = COL1[i][1];
             COL1[i][1] = COL2[i][1];
             COL2[i][1] = COL3[i][1];
             COL3[i][1] = COL4[i][1];
@@ -1196,25 +1241,46 @@ public class FormCubo extends javax.swing.JFrame {
 
     // --- Movimientos D (Derecha) ---
     public void D1() {
+
         // Move
         int t;
-        for (int i = 1; i <= 3; i++) {
-            t = C6[1][i];
-            C6[1][i] = C2[1][i];
-            C2[1][i] = C5[1][i];
-            C5[1][i] = C4[1][i];
-            C4[1][i] = t;
-        }
+        t = C6[1][3];
+        C6[1][3] = C2[1][3];
+        C2[1][3] = C5[1][3];
+        C5[1][3] = C4[3][1];
+        C4[3][1] = t;
+
+        t = C6[1][2];
+        C6[1][2] = C2[1][2];
+        C2[1][2] = C5[1][2];
+        C5[1][2] = C4[3][2];
+        C4[3][2] = t;
+
+        t = C6[1][1];
+        C6[1][1] = C2[1][1];
+        C2[1][1] = C5[1][1];
+        C5[1][1] = C4[3][3];
+        C4[3][3] = t;
 
         // Color
         Color t2;
-        for (int i = 1; i <= 3; i++) {
-            t2 = COL6[1][i];
-            COL6[1][i] = COL2[1][i];
-            COL2[1][i] = COL5[1][i];
-            COL5[1][i] = COL4[1][i];
-            COL4[1][i] = t2;
-        }
+        t2 = COL6[1][3];
+        COL6[1][3] = COL2[1][3];
+        COL2[1][3] = COL5[1][3];
+        COL5[1][3] = COL4[3][1];
+        COL4[3][1] = t2;
+
+        t2 = COL6[1][2];
+        COL6[1][2] = COL2[1][2];
+        COL2[1][2] = COL5[1][2];
+        COL5[1][2] = COL4[3][2];
+        COL4[3][2] = t2;
+
+        t2 = COL6[1][1];
+        COL6[1][1] = COL2[1][1];
+        COL2[1][1] = COL5[1][1];
+        COL5[1][1] = COL4[3][3];
+        COL4[3][3] = t2;
 
         // Update
         if (cc == 1)
@@ -1229,25 +1295,64 @@ public class FormCubo extends javax.swing.JFrame {
     }// Fin del Movimiento D1
 
     public void D2() {
-        // Move
-        int t;
-        for (int i = 1; i <= 3; i++) {
-            t = C6[2][i];
-            C6[2][i] = C2[2][i];
-            C2[2][i] = C5[2][i];
-            C5[2][i] = C4[2][i];
-            C4[2][i] = t;
-        }
 
-        // Color
+        // Move
+        // int t;
+        // t = C6[1][3];
+        // C6[1][3] = C2[1][3];
+        // C2[1][3] = C5[1][3];
+        // C5[1][3] = C4[3][1];
+        // C4[3][1] = t;
+
+        // t = C6[1][2];
+        // C6[1][2] = C2[1][2];
+        // C2[1][2] = C5[1][2];
+        // C5[1][2] = C4[3][2];
+        // C4[3][2] = t;
+
+        // t = C6[1][1];
+        // C6[1][1] = C2[1][1];
+        // C2[1][1] = C5[1][1];
+        // C5[1][1] = C4[3][3];
+        // C4[3][3] = t;
+
+        int t;
+        t = C2[2][1];
+        C2[2][1] = C5[2][1];
+        C5[2][1] = C4[2][3];
+        C4[2][3] = C6[2][1];
+        C6[2][1] = t;
+
+        t = C2[2][2];
+        C2[2][2] = C5[2][2];
+        C5[2][2] = C4[2][2];
+        C4[2][2] = C6[2][2];
+        C6[2][2] = t;
+
+        t = C2[2][3];
+        C2[2][3] = C5[2][3];
+        C5[2][3] = C4[2][1];
+        C4[2][1] = C6[2][3];
+        C6[2][3] = t;
+
         Color t2;
-        for (int i = 1; i <= 3; i++) {
-            t2 = COL6[2][i];
-            COL6[2][i] = COL2[2][i];
-            COL2[2][i] = COL5[2][i];
-            COL5[2][i] = COL4[2][i];
-            COL4[2][i] = t2;
-        }
+        t2 = COL2[2][1];
+        COL2[2][1] = COL5[2][1];
+        COL5[2][1] = COL4[2][3];
+        COL4[2][3] = COL6[2][1];
+        COL6[2][1] = t2;
+
+        t2 = COL2[2][2];
+        COL2[2][2] = COL5[2][2];
+        COL5[2][2] = COL4[2][2];
+        COL4[2][2] = COL6[2][2];
+        COL6[2][2] = t2;
+
+        t2 = COL2[2][3];
+        COL2[2][3] = COL5[2][3];
+        COL5[2][3] = COL4[2][1];
+        COL4[2][1] = COL6[2][3];
+        COL6[2][3] = t2;
 
         // Update
         if (cc == 1)
@@ -1296,25 +1401,43 @@ public class FormCubo extends javax.swing.JFrame {
     // --- Movimientos I (Izquierda) ---
     public void I1() {
 
-        // Move
         int t;
-        for (int i = 1; i <= 3; i++) {
-            t = C5[1][i];
-            C5[1][i] = C2[1][i];
-            C2[1][i] = C6[1][i];
-            C6[1][i] = C4[1][i];
-            C4[1][i] = t;
-        }
+        t = C5[1][1];
+        C5[1][1] = C2[1][1];
+        C2[1][1] = C6[1][1];
+        C6[1][1] = C4[1][1];
+        C4[1][1] = t;
 
-        // Color
+        t = C5[1][2];
+        C5[1][2] = C2[1][2];
+        C2[1][2] = C6[1][2];
+        C6[1][2] = C4[1][2];
+        C4[1][2] = t;
+
+        t = C5[1][3];
+        C5[1][3] = C2[1][3];
+        C2[1][3] = C6[1][3];
+        C6[1][3] = C4[1][3];
+        C4[1][3] = t;
+
         Color t2;
-        for (int i = 1; i <= 3; i++) {
-            t2 = COL5[1][i];
-            COL5[1][i] = COL2[1][i];
-            COL2[1][i] = COL6[1][i];
-            COL6[1][i] = COL4[1][i];
-            COL4[1][i] = t2;
-        }
+        t2 = COL5[1][1];
+        COL5[1][1] = COL2[1][1];
+        COL2[1][1] = COL6[1][1];
+        COL6[1][1] = COL4[1][1];
+        COL4[1][1] = t2;
+
+        t2 = COL5[1][2];
+        COL5[1][2] = COL2[1][2];
+        COL2[1][2] = COL6[1][2];
+        COL6[1][2] = COL4[1][2];
+        COL4[1][2] = t2;
+
+        t2 = COL5[1][3];
+        COL5[1][3] = COL2[1][3];
+        COL2[1][3] = COL6[1][3];
+        COL6[1][3] = COL4[1][3];
+        COL4[1][3] = t2;
 
         // Update
         if (cc == 1)
@@ -1397,23 +1520,46 @@ public class FormCubo extends javax.swing.JFrame {
 
     // ---Movimientos RD ---
     public void RD1() {
+
         // Move
-        for (int i = 1; i <= 3; i++) {
-            int t = C1[3][i];
-            C1[3][i] = C6[3][i];
-            C6[3][i] = C3[3][i];
-            C3[3][i] = C5[3][i];
-            C5[3][i] = t;
-        }
+        int t;
+        t = C1[3][1];
+        C1[3][1] = C5[3][3];
+        C5[3][3] = C3[1][3];
+        C3[1][3] = C6[1][1];
+        C6[1][1] = t;
+
+        t = C1[3][2];
+        C1[3][2] = C5[2][3];
+        C5[2][3] = C3[1][2];
+        C3[1][2] = C6[2][1];
+        C6[2][1] = t;
+
+        t = C1[3][3];
+        C1[3][3] = C5[1][3];
+        C5[1][3] = C3[1][1];
+        C3[1][1] = C6[3][1];
+        C6[3][1] = t;
 
         // Color
-        for (int i = 1; i <= 3; i++) {
-            Color t2 = COL1[3][i];
-            COL1[3][i] = COL6[3][i];
-            COL6[3][i] = COL3[3][i];
-            COL3[3][i] = COL5[3][i];
-            COL5[3][i] = t2;
-        }
+        Color t2;
+        t2 = COL1[3][1];
+        COL1[3][1] = COL5[3][3];
+        COL5[3][3] = COL3[1][3];
+        COL3[1][3] = COL6[1][1];
+        COL6[1][1] = t2;
+
+        t2 = COL1[3][2];
+        COL1[3][2] = COL5[2][3];
+        COL5[2][3] = COL3[1][2];
+        COL3[1][2] = COL6[2][1];
+        COL6[2][1] = t2;
+
+        t2 = COL1[3][3];
+        COL1[3][3] = COL5[1][3];
+        COL5[1][3] = COL3[1][1];
+        COL3[1][1] = COL6[3][1];
+        COL6[3][1] = t2;
 
         // Update
         if (cc == 1)
@@ -1424,29 +1570,49 @@ public class FormCubo extends javax.swing.JFrame {
         // Agregar Registro
         Agregar_Registro("RD1");
 
-        RIC2();
+        RDC2();
 
     }// Fin del Movimiento RD1
 
     public void RD2() {
-
         // Move
-        for (int i = 1; i <= 3; i++) {
-            int t = C1[2][i];
-            C1[2][i] = C6[2][i];
-            C6[2][i] = C3[2][i];
-            C3[2][i] = C5[2][i];
-            C5[2][i] = t;
-        }
+        int t;
+        t = C1[2][1];
+        C1[2][1] = C6[1][2];
+        C6[1][2] = C3[2][3];
+        C3[2][3] = C5[3][2];
+        C5[3][2] = t;
 
-        // Color
-        for (int i = 1; i <= 3; i++) {
-            Color t2 = COL1[2][i];
-            COL1[2][i] = COL6[2][i];
-            COL6[2][i] = COL3[2][i];
-            COL3[2][i] = COL5[2][i];
-            COL5[2][i] = t2;
-        }
+        t = C1[2][2];
+        C1[2][2] = C6[2][2];
+        C6[2][2] = C3[2][2];
+        C3[2][2] = C5[2][2];
+        C5[2][2] = t;
+
+        t = C1[2][3];
+        C1[2][3] = C6[3][2];
+        C6[3][2] = C3[2][1];
+        C3[2][1] = C5[1][2];
+        C5[1][2] = t;
+
+        Color t2;
+        t2 = COL1[2][1];
+        COL1[2][1] = COL6[1][2];
+        COL6[1][2] = COL3[2][3];
+        COL3[2][3] = COL5[3][2];
+        COL5[3][2] = t2;
+
+        t2 = COL1[2][2];
+        COL1[2][2] = COL6[2][2];
+        COL6[2][2] = COL3[2][2];
+        COL3[2][2] = COL5[2][2];
+        COL5[2][2] = t2;
+
+        t2 = COL1[2][3];
+        COL1[2][3] = COL6[3][2];
+        COL6[3][2] = COL3[2][1];
+        COL3[2][1] = COL5[1][2];
+        COL5[1][2] = t2;
 
         // Update
         if (cc == 1)
@@ -1460,24 +1626,44 @@ public class FormCubo extends javax.swing.JFrame {
     }// Fin del Movimiento RD2
 
     public void RD3() {
-
         // Move
-        for (int i = 1; i <= 3; i++) {
-            int t = C1[1][i];
-            C1[1][i] = C6[1][i];
-            C6[1][i] = C3[1][i];
-            C3[1][i] = C5[1][i];
-            C5[1][i] = t;
-        }
+        int t;
+        t = C1[1][1];
+        C1[1][1] = C6[1][3];
+        C6[1][3] = C3[3][3];
+        C3[3][3] = C5[3][1];
+        C5[3][1] = t;
 
-        // Color
-        for (int i = 1; i <= 3; i++) {
-            Color t2 = COL1[1][i];
-            COL1[1][i] = COL6[1][i];
-            COL6[1][i] = COL3[1][i];
-            COL3[1][i] = COL5[1][i];
-            COL5[1][i] = t2;
-        }
+        t = C1[1][2];
+        C1[1][2] = C6[2][3];
+        C6[2][3] = C3[3][2];
+        C3[3][2] = C5[2][1];
+        C5[2][1] = t;
+
+        t = C1[1][3];
+        C1[1][3] = C6[3][3];
+        C6[3][3] = C3[3][1];
+        C3[3][1] = C5[1][1];
+        C5[1][1] = t;
+
+        Color t2;
+        t2 = COL1[1][1];
+        COL1[1][1] = COL6[1][3];
+        COL6[1][3] = COL3[3][3];
+        COL3[3][3] = COL5[3][1];
+        COL5[3][1] = t2;
+
+        t2 = COL1[1][2];
+        COL1[1][2] = COL6[2][3];
+        COL6[2][3] = COL3[3][2];
+        COL3[3][2] = COL5[2][1];
+        COL5[2][1] = t2;
+
+        t2 = COL1[1][3];
+        COL1[1][3] = COL6[3][3];
+        COL6[3][3] = COL3[3][1];
+        COL3[3][1] = COL5[1][1];
+        COL5[1][1] = t2;
 
         // Update
         if (cc == 1)
@@ -1489,6 +1675,7 @@ public class FormCubo extends javax.swing.JFrame {
         Agregar_Registro("RD3");
 
         RDC4();
+
     }// Fin del Movimiento RD3
 
     // ---Movimientos RI ---
@@ -1522,7 +1709,7 @@ public class FormCubo extends javax.swing.JFrame {
         // Agregar Registro
         Agregar_Registro("RI1");
 
-        RIC2();
+        RDC2();
 
     }// Fin del Movimiento RI1
 
@@ -1597,6 +1784,7 @@ public class FormCubo extends javax.swing.JFrame {
      */
 
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
@@ -1693,6 +1881,7 @@ public class FormCubo extends javax.swing.JFrame {
         label_Mov1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         Tabla_Mov = new javax.swing.JTable();
+        Btn_Temp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2396,13 +2585,26 @@ public class FormCubo extends javax.swing.JFrame {
 
         Tabla_Mov.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][] {
-
+                        { null, null, null, null },
+                        { null, null, null, null },
+                        { null, null, null, null },
                         { null, null, null, null }
                 },
                 new String[] {
-                        "Registros", "Movimientos",
+                        "Title 1", "Title 2", "Title 3", "Title 4"
                 }));
         jScrollPane3.setViewportView(Tabla_Mov);
+
+        Btn_Temp.setBackground(new java.awt.Color(23, 23, 23));
+        Btn_Temp.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        Btn_Temp.setForeground(new java.awt.Color(251, 251, 251));
+        Btn_Temp.setText("Temp");
+        Btn_Temp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(23, 23, 23)));
+        Btn_Temp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_TempActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -2572,7 +2774,11 @@ public class FormCubo extends javax.swing.JFrame {
                                                                                                                         Btn_RI1,
                                                                                                                         javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                                         31,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                .addComponent(Btn_Temp,
+                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                        67,
+                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                                                 .addGroup(jPanel5Layout
                                                                                         .createSequentialGroup()
                                                                                         .addComponent(Btn_Etiquetas,
@@ -3269,7 +3475,11 @@ public class FormCubo extends javax.swing.JFrame {
                                                                         .addComponent(Btn_I3,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                 27,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(Btn_Temp,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 27,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addGroup(jPanel5Layout.createSequentialGroup()
                                                 .addGap(0, 182, Short.MAX_VALUE)
                                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
@@ -3349,6 +3559,16 @@ public class FormCubo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn_TempActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Btn_TempActionPerformed
+        // TODO add your handling code here:
+        RDC1();
+        RDC2();
+        RDC3();
+        RDC4();
+        RDC5();
+        RDC6();
+    }// GEN-LAST:event_Btn_TempActionPerformed
 
     private void Btn_I3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Btn_I3ActionPerformed
         // TODO add your handling code here:
@@ -3753,6 +3973,7 @@ public class FormCubo extends javax.swing.JFrame {
     private javax.swing.JButton Btn_RI2;
     private javax.swing.JButton Btn_RI3;
     private javax.swing.JButton Btn_Solucion;
+    private javax.swing.JButton Btn_Temp;
     private javax.swing.JTable Tabla_Mov;
     private javax.swing.JTextField Txt1_11;
     private javax.swing.JTextField Txt1_12;
