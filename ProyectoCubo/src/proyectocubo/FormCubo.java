@@ -82,8 +82,9 @@ public class FormCubo extends javax.swing.JFrame {
 
         Sol = 1;
         try {
-
+            //While: Hasta que este armado
             while (Sol > 0 || cm == 0) {
+                //Comparar los movimientos:
                 // Botones -- A ---
                 if (Mov[cm].equals("A1")) {
                     B1();
@@ -170,18 +171,19 @@ public class FormCubo extends javax.swing.JFrame {
 
                 }
 
+                //Hacer movimientos a la inversa
                 cm = cm - 1;
 
             }
 
+            //Lo paramos cuando llega a 0.
             if (cm <= 0) {
                 cm = 0;
             }
 
         } catch (Exception e) {
-            System.out.println("Cubo completado.");
-            System.out.println("Parametro de completación: " + e);
-
+            label_Mov.setText(":-$ Cubo Armado");
+            System.out.println(e);
         }
 
         Sol = 0;
