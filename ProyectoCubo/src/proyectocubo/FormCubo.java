@@ -41,7 +41,7 @@ public class FormCubo extends javax.swing.JFrame {
     // int Sol = 0;
 
     public static int reg = 0;
-    public static String Mov[] = new String[2000];
+    public static String Mov[] = new String[20000];
     public static int cm = -1; // Registros
     public static int Sol = 0; // 0 El cubo esta armado // 1 Hay que armar el cubo.
     public static String Ultimo_Registro = ""; // Aqui se guardara el ultimo valor de reg, una vez que se aprete el
