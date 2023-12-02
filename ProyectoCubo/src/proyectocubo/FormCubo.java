@@ -2866,13 +2866,12 @@ public class FormCubo extends javax.swing.JFrame {
 
         Tabla_Mov.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
+                
+                
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Registros", "Movimientos"
             }
         ));
         jScrollPane3.setViewportView(Tabla_Mov);
